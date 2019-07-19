@@ -23,8 +23,9 @@ $background_opacity: 0.9;
     width: 100%;
     height: 100%;
     z-index: -1;
+    background-position: initial; 
     background: transparentize($primery_color, 0.3);
-   
+    
   }
 }
 
@@ -55,7 +56,6 @@ $background_opacity: 0.9;
 }
 
 // Set Text Color
-
 @function set_text_color($color) {
   @if (lightness($color) > 40) {
     @return black;
@@ -63,29 +63,6 @@ $background_opacity: 0.9;
     @return white;
   }
 }
-
-//Media Query Mixin
-
-// @media screen and(max-width: 768px) {
-//   main {
-//     align-items: center;
-//     text-align: center;
-//     .lg_heading {
-//       line-height: 1;
-//       margin-bottom: 1rem;
-//     }
-//   }
-//   .portrait {
-//     width: 250px;
-//     height: 250px;
-//     padding: auto;
-//     background: url("../images/me.png");
-//     background-position: center;
-//     background-size: cover;
-//     border-radius: 50%;
-//     border: 1px solid $text_secondary_color;
-//   }
-// }
 
 // Media Query Mixin
 @mixin mediaPhone {

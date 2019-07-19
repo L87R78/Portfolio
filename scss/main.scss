@@ -1,11 +1,13 @@
 @import "./config";
 @import "./menu";
+@import "./mobile";
 
 * {
   box-sizing: border-box;
 }
 
 body {
+  position: relative;
   @include background_image();
   @include background_image_about();
   @include background_image_projects();
@@ -84,8 +86,6 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  // justify-content: center; /* align horizontal */
-  // align-items: center; /* align vertical */
   margin: 30px;
   .item {
     margin: 20px;
@@ -118,8 +118,6 @@ main {
   }
 }
 
-
-
 // Contacts Pages 
 .boxes {
   display: flex;
@@ -148,8 +146,6 @@ main {
   }
 }
 
-
-
 // Grid for About Me
 .about_info {
   display: grid;
@@ -171,11 +167,8 @@ main {
 }
 .bio {
   grid-area: bio;
-  color: black;
   font-size: 1.5rem;
 }
-
-@import "./mobile";
 
 #main_footer {
   text-align: center;
