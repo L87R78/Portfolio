@@ -94,7 +94,7 @@
       background-position: center;
       background-size: cover;
       border-radius: 50%;
-      border: 1px solid $last_name;
+      border: 1px solid $text_secondary_color;
     }
   }
 
@@ -107,7 +107,7 @@
     }
 
     &.current > a {
-      color: $last_name;
+      color: $text_secondary_color;
     }
   }
   .nav_link {
@@ -121,7 +121,7 @@
     @include easeOut();
 
     &:hover {
-      color: $last_name;
+      color: $text_secondary_color;
     }
   }
 }

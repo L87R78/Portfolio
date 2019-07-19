@@ -1,14 +1,16 @@
-@import './confing';
-@import './menu';
-@import './mobile';
+@import "./config";
+@import "./menu";
 
 * {
   box-sizing: border-box;
 }
-  
+
 body {
   @include background_image();
-  color: white;
+  @include background_image_about();
+  @include background_image_projects();
+  background: $primery_color;
+  color: set_text_color($primery_color);
   height: 100%;
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -20,8 +22,8 @@ header {
   z-index: 2;
   width: 100%;
 }
-.last_name {
-  color: $last_name;
+.text_secondary {
+  color: $text_secondary_color;
 }
 
 //Headings
@@ -31,13 +33,13 @@ h3 {
   margin: 0;
   font-weight: 400;
 
-  &.name_heading {
+  &.lg_heading {
     //nested
-    font-size: 6rem;
+    font-size: 3rem;
   }
-  &.skills {
+  &.sm_heading {
     margin-bottom: 1rem;
-    padding: 0 2rem;
+    padding: 0;
     background: -moz-linear-gradient(
       left,
       rgba(134, 131, 130, 1) 0%,
@@ -57,14 +59,14 @@ a {
 }
 main {
   padding: 4rem;
-  height: 100%;
+  min-height: calc(100vh - 30px);
 
   .social_link {
     padding: 0;
     a {
       padding-right: 1rem;
       &:hover {
-        color: $last_name;
+        color: $text_secondary_color;
         @include easeOut();
       }
     }
@@ -75,4 +77,110 @@ main {
       margin-top: 20vh;
     }
   }
+}
+
+// Work Projects
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  // justify-content: center; /* align horizontal */
+  // align-items: center; /* align vertical */
+  margin: 30px;
+  .item {
+    margin: 20px;
+    a{
+       display: block;
+       text-align: center;
+    }
+    .btn {
+      padding: 0.1rem;
+      border: 0;
+      margin-bottom: 0.3rem;
+      &:hover {
+        background: $text_secondary_color;
+        color: set_text_color($text_secondary_color);
+      }
+    }
+    .btn_dark {
+      @extend .btn;
+      background: darken($primery_color, 50);
+      color: white;
+    }
+
+  }
+  img {
+    width: 170px;
+    height: 160px;
+    background-position: center;
+    background-size: cover;
+    border: 1px solid white;
+  }
+}
+
+
+
+// Contacts Pages 
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+
+  div {
+    font-size: 2rem;
+    border: 3px solid white;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+
+    @include easeOut();
+
+    &:hover {
+      padding: 0.5rem 1.5rem;
+      background: $text_secondary_color;
+      color: set_text_color($text_secondary_color);
+
+      span {
+        color: set_text_color($text_secondary_color);
+      }
+    }
+  }
+}
+
+
+
+// Grid for About Me
+.about_info {
+  display: grid;
+  margin-top: 1px;
+  grid-gap: 30px;
+  grid-template-areas:
+    "bioimage bio bio"
+    "job1 job2 job3";
+
+  grid-template-columns: repeat(1, 1fr);
+}
+.bio_image {
+  grid-area: bioimage;
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: $text_secondary_color 3px solid;
+}
+.bio {
+  grid-area: bio;
+  color: black;
+  font-size: 1.5rem;
+}
+
+@import "./mobile";
+
+#main_footer {
+  text-align: center;
+  padding: 0.2rem;
+  background: darken($primery_color, 10);
+  color: set-text-color($primery_color);
+  height: 30px;
 }

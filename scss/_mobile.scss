@@ -1,14 +1,20 @@
 @include mediaPhone {
   main {
-    .short_last_name {
-      color: yellow;
-      display: show;
+    align-items: center;
+    text-align: center;
+    .text_secondary {
+      color: $text_secondary_color;
     }
-    .last_name {
-      display: none;
-    }
-    .name_heading span {
-      font-size: 25px;
+
+    .about_info {
+      grid-template-areas:
+        "bioimage"
+        "bio"
+        "job1"
+        "job2"
+        "job3";
+
+      grid-template-columns: 1fr;
     }
   }
   .menu {
@@ -34,17 +40,24 @@
       transform: translate3d(100%, 0, 0);
     }
   }
+  .boxes div{
+    font-size: 1rem;
+  }
 }
 
 @include mediaTablet {
   main {
     align-items: center;
     text-align: center;
-    .short_last_name {
-      display: none;
-    }
-    .name_heading span {
-      font-size: smaller;
+    .about_info {
+      grid-template-areas:
+        "bioimage"
+        "bio"
+        "job1"
+        "job2"
+        "job3";
+
+      grid-template-columns: 1fr;
     }
   }
   .menu {
@@ -76,22 +89,16 @@
   main {
     align-items: center;
     text-align: center;
-    .short_last_name {
-      display: none;
-    }
-    .name_heading span {
-      font-size: smaller;
+    h1.lg_heading {
+      font-size: 4rem;
     }
   }
 }
 
 @include mediaXL {
   main {
-    .short_last_name {
-      display: none;
-    }
-    .name_heading span {
-      font-size: smaller;
+    h1.lg_heading {
+      font-size: 6rem;
     }
   }
 }

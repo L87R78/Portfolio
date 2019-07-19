@@ -14,9 +14,9 @@
       crossorigin="anonymous"
     ></script>
 
-    <title>Welcome To My Portfolio</title>
+    <title>About Me</title>
   </head>
-  <body id="bg_image">
+  <body id="bg_about">
     <header>
       <div class="menu_btn">
         <div class="btn_line"></div>
@@ -29,12 +29,12 @@
           <div class="portrait"></div>
         </div>
         <ul class="menu_nav">
-          <li class="nav_item current">
-            <a href="index.html" class="nav_link">Home</a>
-          </li>
           <li class="nav_item">
-              <a href="about.html" class="nav_link">About Me</a>
-            </li>
+            <a href="/" class="nav_link">Home</a>
+          </li>
+          <li class="nav_item current">
+            <a href="about.html" class="nav_link">About Me</a>
+          </li>
           <li class="nav_item">
             <a href="projects.html" class="nav_link">My Work</a>
           </li>
@@ -45,19 +45,23 @@
       </nav>
     </header>
 
-    <main id="home">
+    <main id="about">
       <h1 class="lg_heading">
-        Lubomir
-        <span class="text_secondary">Atanasov</span>
+        About
+        <span class="text_secondary">Me</span>
       </h1>
       <h2 class="sm_heading">
-        JavaScript - jQuery - HTML/CSS - ReactJS - NodeJs - MongoDB
+        Let me tell you a few thing...
       </h2>
-      <div class="social_link">
-        <a href=""><i class="fab fa-github fa-2x"></i></a>
-        <a href=""><i class="fab fa-linkedin fa-2x"></i></a>
-      </div>
+      <div class="about_info">
+        <img src="./images/me.png" alt="Lubomir" class="bio_image" />
+        <div class="bio">
+          <p>
+              Front End developer with industry experience building websites and web applications. Specialize in JavaScript and have experience working with React and Redux. I also have experience working with jQuery, HTML/CSS, NodeJS-ExpressJS, MongoDB.
+          </p>
+        </div>
     </main>
+    <footer id="main_footer">Copyright &copy 2019</footer>
 
     <script src="./js/main.js"></script>
   </body>

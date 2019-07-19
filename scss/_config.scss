@@ -1,0 +1,113 @@
+$primery_color: #444;
+$text_secondary_color: yellow;
+
+$show_home_image: true;
+$home_image: url("../images/home.jpg");
+$projects_image: url("../images/projects.jpg");
+$about_image: url("../images/about.jpg");
+$background_opacity: 0.9;
+
+@mixin easeOut {
+  transition: all 1s ease-out;
+}
+
+//mixin for all images
+@mixin allBackgrondImagesSizing {
+  background-position: center;
+  background-size: cover;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: transparentize($primery_color, 0.3);
+   
+  }
+}
+
+@mixin background_image {
+  @if $show_home_image {
+    &#bg_image {
+      background-image: $home_image;
+      @include allBackgrondImagesSizing;
+    }
+  }
+}
+@mixin background_image_about {
+  @if $show_home_image {
+    &#bg_about {
+      background-image: $about_image;
+      @include allBackgrondImagesSizing;
+      
+    }
+  }
+}
+@mixin background_image_projects {
+  @if $show_home_image {
+    &#bg_work {
+      background-image: $projects_image;
+      @include allBackgrondImagesSizing;
+    }  
+  }
+}
+
+// Set Text Color
+
+@function set_text_color($color) {
+  @if (lightness($color) > 40) {
+    @return black;
+  } @else {
+    @return white;
+  }
+}
+
+//Media Query Mixin
+
+// @media screen and(max-width: 768px) {
+//   main {
+//     align-items: center;
+//     text-align: center;
+//     .lg_heading {
+//       line-height: 1;
+//       margin-bottom: 1rem;
+//     }
+//   }
+//   .portrait {
+//     width: 250px;
+//     height: 250px;
+//     padding: auto;
+//     background: url("../images/me.png");
+//     background-position: center;
+//     background-size: cover;
+//     border-radius: 50%;
+//     border: 1px solid $text_secondary_color;
+//   }
+// }
+
+// Media Query Mixin
+@mixin mediaPhone {
+  @media screen and(max-width: 450px) {
+    @content;
+  }
+}
+
+@mixin mediaTablet {
+  @media screen and(min-width: 451px) and(max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mediaLaptop {
+  @media screen and (min-width: 769px) and(max-width: 1170px) {
+    @content;
+  }
+}
+
+@mixin mediaXL {
+  @media screen and (min-width: 1171px) {
+    @content;
+  }
+}
